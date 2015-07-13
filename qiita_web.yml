@@ -1,0 +1,25 @@
+name: Qiita::Web
+encoding: UTF-8
+View::TT:
+    INCLUDE_PATH:
+        - root/template
+    TEMPLATE_EXTENSION: '.tt2'
+    ENCODING : utf-8
+    CLASS: "Template::AutoFilter"
+Model::DBIC:
+    connect_info:
+        - 'dbi:mysql:'
+        - 'user'
+        - 'passwd'
+        - mysql_enable_utf8 : 1
+validator:
+  plugins:
+    - Japanese
+    - DBIC::Unique
+  options:
+    charset: utf8
+    dbic_base_class: Qiita::Web::Model::DBIC
+    messages: messages.yml
+
+
+<link href="[% base _ "static/css/style.css" | html %]" rel="stylesheet">
