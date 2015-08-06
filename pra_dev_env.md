@@ -1,15 +1,12 @@
 1. 開発環境を作成  
 	* CentOSのインストール  
 		isoを落としてきてVirtualBoxを使ってインストール  
-  
 	* ネットワークにつながるようにする  
 		eth0のONBOOTをyesにしとく  
-  
 	* Development tools と git vimをインストール  
 		yumコマンド  
         yum groupinstall "Development tools"
         yum install git vim-enhanced nkf readline-devel wget curl man
-  
 	* sshで作業アカウントに接続  
 		外部から接続できるように、virtualboxからネットワークアダプターを追加（ホストオンリーアダプター）  
 		(IPadress 192.168.---はローカルのIP)  
@@ -20,7 +17,6 @@
 		~/.bash_profileにplenvのパスを通して、plenv初期化して、シェルを再起動、  
 		perl-buildをインストール  
 		git clone https://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/  
-  
 	* Perlのインストール  
 		バージョン5.20.2をインストールする plenv install 5.20.2  
 		使用するバージョンを指定する plenv global 5.20.2  
@@ -63,7 +59,6 @@
 			    server{  
 			        listen 80;  
 				    server_name 192.168.56.101   
-  
 			        location / {  
 				    proxy_pass http://192.168.56.101:5000;  
 				    }  
